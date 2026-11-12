@@ -9,6 +9,8 @@ export const colors = {
   forest: '#2F6B6A',
   forestIcon: '#2D605F', // selected tab icon
   tabActive: '#D6EADB', // selected tab box
+  yellow: '#F6D35F', // step counter label
+  yellowLight: '#FAE6A8', // start of the step counter gradient
   ink900: '#1B3A40',
   ink600: '#3C5558',
   ink300: '#3B6F60',
@@ -35,6 +37,7 @@ export const fonts = {
 // Inter for the title and body text, Lora for headings, questions, actions and quotes.
 export const typography = {
   title: { fontFamily: fonts.inter.bold, fontSize: 26, lineHeight: 32 },
+  titleSmall: { fontFamily: fonts.inter.bold, fontSize: 18, lineHeight: 26 },
   titleIntro: { fontFamily: fonts.inter.regular, fontSize: 13, lineHeight: 18 }, 
   heroIntro: { fontFamily: fonts.inter.medium, fontSize: 11, lineHeight: 16 },
   heroQuestion : { fontFamily: fonts.lora.medium, fontSize: 28, lineHeight: 34 },
@@ -45,6 +48,8 @@ export const typography = {
   stepTitle: { fontFamily: fonts.inter.semiBold, fontSize: 16, lineHeight: 24 },
   stepLetter: { fontFamily: fonts.inter.semiBold, fontSize: 16, lineHeight: 24 },
   label: { fontFamily: fonts.inter.medium, fontSize: 14, lineHeight: 20 },
+  labelNumber: { fontFamily: fonts.inter.semiBold, fontSize: 14, lineHeight: 20 },
+  small: { fontFamily: fonts.inter.regular, fontSize: 12, lineHeight: 16 },
   link: { fontFamily: fonts.inter.medium, fontSize: 11, lineHeight: 14 },
   linkActive: { fontFamily: fonts.inter.semiBold, fontSize: 11, lineHeight: 14 },
 } satisfies Record<string, TextStyle>;

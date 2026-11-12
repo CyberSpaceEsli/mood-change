@@ -1,3 +1,4 @@
+import { router } from 'expo-router';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import HeroBackgroundSvg from '../../assets/icons/hero-background.svg';
@@ -22,7 +23,7 @@ export function HeroCard() {
           </AppText>
         </View>
 
-        <Pressable style={styles.button}>
+        <Pressable style={styles.button} onPress={() => router.push('/process')}>
           <AppText variant="heroButtonText" style={styles.buttonText}>
             Start
           </AppText>
