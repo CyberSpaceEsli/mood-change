@@ -3,12 +3,16 @@ import { StyleSheet, View } from 'react-native';
 
 import { AppText } from '@/components/AppText';
 import { ProcessHeader } from '@/components/ProcessHeader';
+import { ProcessNav } from '@/components/ProcessNav';
 import { spacing } from '@/constants/theme';
 
 export default function ProcessScreen() {
   return (
     <View style={styles.screen}>
       <ProcessHeader step={1} onClose={() => router.back()} />
+      <View style={styles.nav}>
+        <ProcessNav step={1} />
+      </View>
       <View style={styles.content}>
         <AppText variant="heading">Recognize</AppText>
         <AppText variant="body">Call out the mood change.</AppText>
@@ -21,6 +25,9 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     paddingHorizontal: spacing.screen,
+  },
+  nav: {
+    marginTop: 24,
   },
   content: {
     marginTop: 32,

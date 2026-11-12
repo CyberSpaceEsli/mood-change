@@ -8,7 +8,10 @@ export const colors = {
   heroBackground: '#E5F0EA',
   forest: '#2F6B6A',
   forestIcon: '#2D605F', // selected tab icon
-  tabActive: '#D6EADB', // selected tab box
+  mint: '#D6EADB',
+  stepIdle: '#EEF5F0', // upcoming step box
+  stepIdleOutline: '#C9DAD3', // upcoming step box outline
+  stepLine: '#D9E2DE', // line connecting the step boxes
   yellow: '#F6D35F', // step counter label
   yellowLight: '#FAE6A8', // start of the step counter gradient
   ink900: '#1B3A40',
