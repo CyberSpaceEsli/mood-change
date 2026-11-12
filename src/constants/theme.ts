@@ -28,6 +28,7 @@ export const fonts = {
 // Inter for the title and body text, Lora for headings, questions, actions and quotes.
 export const typography = {
   title: { fontFamily: fonts.inter.bold, fontSize: 26, lineHeight: 32 },
+  titleIntro: { fontFamily: fonts.inter.regular, fontSize: 13, lineHeight: 18 }, 
   heading: { fontFamily: fonts.lora.medium, fontSize: 22, lineHeight: 30 },
   body: { fontFamily: fonts.inter.regular, fontSize: 16, lineHeight: 24 },
   label: { fontFamily: fonts.inter.medium, fontSize: 14, lineHeight: 20 },
