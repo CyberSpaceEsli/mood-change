@@ -17,7 +17,9 @@ export function HeroCard() {
         <View style={styles.texts}>
           <AppText variant="heroIntro">RAIN · 4 STEPS</AppText>
           <AppText variant="heroQuestion">{'Notice a\nmood change?'}</AppText>
-          <AppText variant="heroText">{'Pause. Use the steps.\nFind your way back together.'}</AppText>
+          <AppText variant="heroText" style={styles.text}>
+            {'Pause. Use the steps.\nFind your way back together.'}
+          </AppText>
         </View>
 
         <Pressable style={styles.button}>
@@ -50,15 +52,18 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     paddingTop: 25,
-    paddingBottom: 16, // button sits closer to the bottom
+    paddingBottom: 12, // button sits closer to the bottom
     paddingHorizontal: 24,
-    gap: 15, // space between the text and the button
+    gap: 13, // space between the text and the button
     alignItems: 'flex-start',
     borderRadius: 26,
     boxShadow: 'inset 0px 4px 12px 1px rgba(27, 58, 64, 0.04)', // inner shadow, Ink 900 at 4%, spread 1
   },
   texts: {
     gap: 5, // space between the text lines
+  },
+  text: {
+    marginTop: 6, // extra space below the question (11px in total)
   },
   button: {
     width: 102,

@@ -42,6 +42,8 @@ export const typography = {
   heroButtonText: { fontFamily: fonts.inter.semiBold, fontSize: 16, lineHeight: 24 },
   heading: { fontFamily: fonts.lora.medium, fontSize: 22, lineHeight: 30 },
   body: { fontFamily: fonts.inter.regular, fontSize: 16, lineHeight: 24 },
+  stepTitle: { fontFamily: fonts.inter.semiBold, fontSize: 16, lineHeight: 24 },
+  stepLetter: { fontFamily: fonts.inter.semiBold, fontSize: 16, lineHeight: 24 },
   label: { fontFamily: fonts.inter.medium, fontSize: 14, lineHeight: 20 },
   link: { fontFamily: fonts.inter.medium, fontSize: 11, lineHeight: 14 },
   linkActive: { fontFamily: fonts.inter.semiBold, fontSize: 11, lineHeight: 14 },
