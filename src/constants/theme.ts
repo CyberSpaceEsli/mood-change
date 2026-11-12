@@ -13,7 +13,10 @@ export const colors = {
   stepIdleOutline: '#C9DAD3', // upcoming step box outline
   stepLine: '#D9E2DE', // line connecting the step boxes
   yellow: '#F6D35F', // step counter label
-  yellowLight: '#FAE6A8', // start of the step counter gradient
+  yellowPale: '#FBECBE8C', // #FBECBE at 55% opacity, info box background
+  yellowOutline: '#F7F1DF', // info box outline, slightly darker than the box
+  yellowSoft: '#FFF9E6', // nearly white yellow, info box icon box
+  yellowLight:'#FAE6A8', // start of the step counter gradient
   ink900: '#1B3A40',
   ink600: '#3C5558',
   ink300: '#3B6F60',
@@ -47,11 +50,11 @@ export const typography = {
   heroText: { fontFamily: fonts.inter.regular, fontSize: 14, lineHeight: 20 },
   heroButtonText: { fontFamily: fonts.inter.semiBold, fontSize: 16, lineHeight: 24 },
   heading: { fontFamily: fonts.lora.medium, fontSize: 22, lineHeight: 30 },
-  body: { fontFamily: fonts.inter.regular, fontSize: 16, lineHeight: 24 },
+  body: { fontFamily: fonts.inter.regular, fontSize: 14, lineHeight: 20 },
   stepTitle: { fontFamily: fonts.inter.semiBold, fontSize: 16, lineHeight: 24 },
   stepLetter: { fontFamily: fonts.inter.semiBold, fontSize: 16, lineHeight: 24 },
   label: { fontFamily: fonts.inter.medium, fontSize: 14, lineHeight: 20 },
-  labelNumber: { fontFamily: fonts.inter.semiBold, fontSize: 14, lineHeight: 20 },
+  labelBig: { fontFamily: fonts.inter.semiBold, fontSize: 14, lineHeight: 20 },
   small: { fontFamily: fonts.inter.regular, fontSize: 12, lineHeight: 16 },
   link: { fontFamily: fonts.inter.medium, fontSize: 11, lineHeight: 14 },
   linkActive: { fontFamily: fonts.inter.semiBold, fontSize: 11, lineHeight: 14 },

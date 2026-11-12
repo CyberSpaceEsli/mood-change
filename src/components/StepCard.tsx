@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 1,
     borderColor: colors.whiteOutline,
-    backgroundColor: colors.tabActive,
+    backgroundColor: colors.mint,
   },
   letter: {
     color: colors.ink900,

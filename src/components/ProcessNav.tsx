@@ -28,7 +28,7 @@ export function ProcessNav({ step }: ProcessNavProps) {
               </AppText>
             </View>
             <AppText
-              variant={isActive ? 'labelNumber' : 'label'}
+              variant={isActive ? 'labelBig' : 'label'}
               style={{ color: isActive ? colors.ink900 : colors.ink600 }}
             >
               {title}

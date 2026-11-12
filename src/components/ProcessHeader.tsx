@@ -25,7 +25,7 @@ export function ProcessHeader({ step, onClose }: ProcessHeaderProps) {
 
         <View style={[styles.side, styles.right]}>
           <View style={styles.label}>
-            <AppText variant="labelNumber">{step} / 4</AppText>
+            <AppText variant="labelBig">{step} / 4</AppText>
           </View>
         </View>
       </View>

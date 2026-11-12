@@ -1,9 +1,9 @@
 import { router } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 
-import { AppText } from '@/components/AppText';
 import { ProcessHeader } from '@/components/ProcessHeader';
 import { ProcessNav } from '@/components/ProcessNav';
+import { RecognizeContent } from '@/components/RecognizeContent';
 import { spacing } from '@/constants/theme';
 
 export default function ProcessScreen() {
@@ -14,8 +14,7 @@ export default function ProcessScreen() {
         <ProcessNav step={1} />
       </View>
       <View style={styles.content}>
-        <AppText variant="heading">Recognize</AppText>
-        <AppText variant="body">Call out the mood change.</AppText>
+        <RecognizeContent />
       </View>
     </View>
   );
@@ -31,6 +30,5 @@ const styles = StyleSheet.create({
   },
   content: {
     marginTop: 32,
-    gap: 8,
   },
 });

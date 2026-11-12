@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   },
   itemActive: {
     width: 86,
-    backgroundColor: colors.tabActive,
+    backgroundColor: colors.mint,
     borderColor: colors.whiteOutline,
   },
 });
