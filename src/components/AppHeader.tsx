@@ -7,7 +7,7 @@ import { colors } from '@/constants/theme';
 
 export function AppHeader() {
   return (
-    <SafeAreaView edges={['top']} style={styles.container}>
+    <SafeAreaView edges={['top']}>
       <View style={styles.row}>
         <View style={styles.texts}>
           <AppText variant="title">Mood Change</AppText>
@@ -22,9 +22,6 @@ export function AppHeader() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginHorizontal: 16,
-  },
   row: {
     flexDirection: 'row',
     alignItems: 'center',

@@ -34,7 +34,6 @@ export function HeroCard() {
 const styles = StyleSheet.create({
   card: {
     height: 238,
-    marginHorizontal: 16,
     backgroundColor: colors.heroBackground,
     borderRadius: 26,
     boxShadow: '0px 4px 12px 1px rgba(27, 58, 64, 0.04)', // Ink 900 at 4%, spread 1
@@ -66,6 +65,8 @@ const styles = StyleSheet.create({
     height: 48,
     borderRadius: 20,
     backgroundColor: colors.forest,
+    borderWidth: 1,
+    borderColor: colors.whiteOutline,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',

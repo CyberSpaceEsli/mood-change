@@ -2,8 +2,13 @@ import type { TextStyle } from 'react-native';
 
 export const colors = {
   background: '#FDFCF6',
+  white: '#FFFFFF',
+  whiteOutline: '#FFFFFF80', // white at 50%
+  outline: '#F4F3EF', // subtle off-grey border
   heroBackground: '#E5F0EA',
   forest: '#2F6B6A',
+  forestIcon: '#2D605F', // selected tab icon
+  tabActive: '#D6EADB', // selected tab box
   ink900: '#1B3A40',
   ink600: '#3C5558',
   ink300: '#3B6F60',
@@ -38,6 +43,12 @@ export const typography = {
   heading: { fontFamily: fonts.lora.medium, fontSize: 22, lineHeight: 30 },
   body: { fontFamily: fonts.inter.regular, fontSize: 16, lineHeight: 24 },
   label: { fontFamily: fonts.inter.medium, fontSize: 14, lineHeight: 20 },
+  link: { fontFamily: fonts.inter.medium, fontSize: 11, lineHeight: 14 },
+  linkActive: { fontFamily: fonts.inter.semiBold, fontSize: 11, lineHeight: 14 },
 } satisfies Record<string, TextStyle>;
 
 export type TypographyVariant = keyof typeof typography;
+
+export const spacing = {
+  screen: 16, // left/right space between screen edge and content
+} as const;
