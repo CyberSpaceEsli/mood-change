@@ -5,7 +5,7 @@ import { StepCard } from '@/components/StepCard';
 import { colors } from '@/constants/theme';
 
 const steps = [
-  { letter: 'R', title: 'Recognize', text: 'Call out the mood change.' },
+  { letter: 'R', title: 'Recognise', text: 'Call out the mood change.' },
   { letter: 'A', title: 'Allow', text: 'Let the feeling be there.' },
   { letter: 'I', title: 'Investigate', text: 'The feeling in your body.' },
   { letter: 'N', title: 'Nurture', text: 'Switch back to connection.' },
