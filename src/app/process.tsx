@@ -12,6 +12,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AllowContent } from '@/components/AllowContent';
 import { AppText } from '@/components/AppText';
+import { InvestigateContent } from '@/components/InvestigateContent';
 import { Pagination } from '@/components/Pagination';
 import { ProcessHeader } from '@/components/ProcessHeader';
 import { ProcessNav } from '@/components/ProcessNav';
@@ -22,7 +23,7 @@ import { spacing } from '@/constants/theme';
 const pages = [
   <RecognizeContent key="recognise" />,
   <AllowContent key="allow" />,
-  <AppText key="investigate">Investigate</AppText>,
+  <InvestigateContent key="investigate" />,
   <AppText key="nurture">Nurture</AppText>,
 ];
 

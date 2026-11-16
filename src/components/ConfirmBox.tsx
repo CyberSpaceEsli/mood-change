@@ -1,18 +1,17 @@
 import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
-import CheckSvg from '../../assets/icons/check.svg';
-
 import { AppText } from '@/components/AppText';
+import { CheckBox } from '@/components/CheckBox';
 import { colors } from '@/constants/theme';
 
-type ConfirmBigBoxProps = {
+type ConfirmBoxProps = {
   title: string;
   items: string[];
   onChange?: (checked: boolean[]) => void;
 };
 
-export function ConfirmBigBox({ title, items, onChange }: ConfirmBigBoxProps) {
+export function ConfirmBox({ title, items, onChange }: ConfirmBoxProps) {
   const [checked, setChecked] = useState<boolean[]>(() => items.map(() => false));
 
   const toggle = (index: number) => {
@@ -35,9 +34,7 @@ export function ConfirmBigBox({ title, items, onChange }: ConfirmBigBoxProps) {
               accessibilityState={{ checked: isChecked }}
               style={[styles.action, isChecked && styles.actionChecked]}
             >
-              <View style={[styles.checkbox, isChecked && styles.checkboxChecked]}>
-                {isChecked && <CheckSvg width={16} height={16} />}
-              </View>
+              <CheckBox checked={isChecked} size={26} radius={6} />
               <AppText variant="label" style={styles.text}>
                 {text}
               </AppText>
@@ -70,19 +67,6 @@ const styles = StyleSheet.create({
   },
   actionChecked: {
     borderColor: '#2F6B6A66', // forest at 40%
-  },
-  checkbox: {
-    width: 32,
-    height: 32,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: '#2F6B6A66', // forest at 40%
-    backgroundColor: colors.white,
-  },
-  checkboxChecked: {
-    backgroundColor: colors.stepIdle,
   },
   text: {
     flex: 1,
