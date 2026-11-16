@@ -23,13 +23,13 @@ export function ProcessNav({ step }: ProcessNavProps) {
         return (
           <View key={letter} style={styles.item}>
             <View style={[styles.box, isActive && styles.boxActive]}>
-              <AppText variant="stepLetter" style={{ color: isActive ? colors.white : colors.ink900 }}>
+              <AppText variant="label" style={{ color: isActive ? colors.white : colors.ink900 }}>
                 {letter}
               </AppText>
             </View>
             <AppText
-              variant={isActive ? 'labelBig' : 'label'}
-              style={{ color: isActive ? colors.ink900 : colors.ink600 }}
+              variant="small"
+              style={{ color: isActive ? colors.ink900 : colors.ink600, opacity: isActive ? 1 : 0.7 }}
             >
               {title}
             </AppText>
@@ -46,30 +46,29 @@ const styles = StyleSheet.create({
   },
   line: {
     position: 'absolute', // runs behind the boxes, from the first to the last
-    top: 24, // vertical middle of the boxes
+    top: 15, // vertical middle of the boxes
     left: '12.5%', // centre of the first column
     right: '12.5%', // centre of the last column
-    height: 2,
+    height: 1,
     backgroundColor: colors.stepLine,
   },
   item: {
     flex: 1, // 4 equal columns
     alignItems: 'center',
-    gap: 8,
+    gap: 4,
   },
   box: {
-    width: 44,
-    height: 44,
+    width: 30,
+    height: 30,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 16,
-    borderWidth: 2,
+    borderRadius: 10,
+    borderWidth: 1,
     borderColor: colors.stepIdleOutline,
     backgroundColor: colors.stepIdle,
   },
   boxActive: {
-    borderWidth: 1, // same outline as the Start button
-    borderColor: colors.whiteOutline,
+    borderColor: colors.forest,
     backgroundColor: colors.forest,
   },
 });

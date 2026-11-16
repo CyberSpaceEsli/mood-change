@@ -40,10 +40,10 @@ const styles = StyleSheet.create({
   action: {
     flexDirection: 'row', // icon box next to the text
     alignItems: 'center',
-    gap: 12,
+    gap: 14,
     paddingVertical: 14,
-    paddingHorizontal: 12,
-    borderRadius: 26,
+    paddingHorizontal: 16,
+    borderRadius: 20,
     backgroundColor: colors.white,
     borderWidth: 1,
     borderColor: colors.outline, // same subtle grey as the TabBar

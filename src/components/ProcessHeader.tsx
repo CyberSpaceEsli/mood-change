@@ -25,7 +25,9 @@ export function ProcessHeader({ step, onClose }: ProcessHeaderProps) {
 
         <View style={[styles.side, styles.right]}>
           <View style={styles.label}>
-            <AppText variant="labelBig">{step} / 4</AppText>
+            <AppText variant="labelBig" style={styles.labelText}>
+              {step} / 4
+            </AppText>
           </View>
         </View>
       </View>
@@ -48,12 +50,16 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   label: {
-    width: 52,
+    minWidth: 52,
     height: 30,
+    paddingHorizontal: 8,
     alignItems: 'center', // "1/4" centered horizontally
     justifyContent: 'center',
     borderRadius: 14,
     opacity: 1,
     backgroundImage: `linear-gradient(${colors.yellowLight} 0%, ${colors.yellow} 100%)`,
+  },
+  labelText: {
+    fontVariant: ['tabular-nums'], // every digit has the same width, so the label looks the same on all steps
   },
 });
