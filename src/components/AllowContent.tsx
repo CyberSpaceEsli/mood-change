@@ -7,7 +7,7 @@ import { ProcessIntro } from '@/components/ProcessIntro';
 export function AllowContent() {
   return (
     <View style={styles.container}>
-      <ProcessIntro step={2} title="Allow" text="Breathe to stay calm, and accept your emotions." />
+      <ProcessIntro step={2} title="Allow" text="Breathe to stay calm, and feel your emotion." />
       <BreatheCard />
       <ConfirmBox title="Confirm:" items={['I allow my emotion just as it is']} />
       {/* action steps of the Allow step go here */}

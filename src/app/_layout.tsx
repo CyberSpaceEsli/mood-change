@@ -50,7 +50,10 @@ export default function RootLayout() {
           headerShown: false,
           contentStyle: { backgroundColor: colors.background },
         }}
-      />
+      >
+        {/* no swipe-back from the screen edge, the process is left with the close icon only */}
+        <Stack.Screen name="process" options={{ gestureEnabled: false }} />
+      </Stack>
       <StatusBar style="dark" />
     </>
   );
