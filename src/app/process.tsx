@@ -1,10 +1,11 @@
 import { router } from 'expo-router';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import {
   type LayoutChangeEvent,
   type NativeScrollEvent,
   type NativeSyntheticEvent,
   ScrollView,
+  type ScrollViewInstance,
   StyleSheet,
   View,
 } from 'react-native';
@@ -30,8 +31,16 @@ const pages = [
 export default function ProcessScreen() {
   const [index, setIndex] = useState(0);
   const [width, setWidth] = useState(0);
+  const scrollRef = useRef<ScrollViewInstance>(null);
 
   const onLayout = (e: LayoutChangeEvent) => setWidth(e.nativeEvent.layout.width);
+
+  // Swiping back is not allowed: if the user drags towards an earlier step, snap back.
+  const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
+    if (width > 0 && e.nativeEvent.contentOffset.x < index * width) {
+      scrollRef.current?.scrollTo({ x: index * width, animated: false });
+    }
+  };
 
   const onScrollEnd = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
     if (width > 0) setIndex(Math.round(e.nativeEvent.contentOffset.x / width));
@@ -49,9 +58,12 @@ export default function ProcessScreen() {
       <View style={styles.pager} onLayout={onLayout}>
         {width > 0 && (
           <ScrollView
+            ref={scrollRef}
             horizontal
             pagingEnabled
             showsHorizontalScrollIndicator={false}
+            scrollEventThrottle={16}
+            onScroll={onScroll}
             onMomentumScrollEnd={onScrollEnd}
           >
             {pages.map((page, i) => (
