@@ -61,7 +61,7 @@ assets/
   audio/        love affirmation soundtrack
 ```
 
-## About & credtis
+## About & credits
 
 **Illustrations:** All images and SVG graphics in this app were created with the help of AI.
 
