@@ -32,7 +32,8 @@
           "backgroundColor": "#FDFCF6"
         }
       ],
-      "expo-font"
+      "expo-font",
+      "expo-audio"
     ]
   }
 }

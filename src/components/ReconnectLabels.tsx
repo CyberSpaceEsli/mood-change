@@ -14,9 +14,10 @@ const options = [
 
 type ReconnectLabelsProps = {
   onChange?: (selected: string | null) => void;
+  subText?: string;
 };
 
-export function ReconnectLabels({ onChange }: ReconnectLabelsProps) {
+export function ReconnectLabels({ onChange, subText }: ReconnectLabelsProps) {
   const [selected, setSelected] = useState<string | null>(null);
 
   const select = (label: string) => {
@@ -28,6 +29,9 @@ export function ReconnectLabels({ onChange }: ReconnectLabelsProps) {
   return (
     <View style={styles.container}>
       <AppText variant="heading">Reconnect</AppText>
+         <AppText variant="body" style={styles.subText}>
+            {subText}
+          </AppText>
       <View style={styles.row}>
         {options.map(({ label, Icon }) => {
           const isSelected = selected === label;
@@ -88,4 +92,7 @@ const styles = StyleSheet.create({
   text: {
     color: colors.ink900,
   },
+   subText: {
+    color: colors.ink600,
+  }
 });

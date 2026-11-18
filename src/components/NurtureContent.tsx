@@ -15,15 +15,15 @@ export function NurtureContent() {
   return (
     <View style={styles.container}>
       <ProcessIntro step={4} title="Nurture" text="Switch back to love." />
-      <InfoBox Icon={TogetherSvg} text="Now, sit together" subText="and continue with the next actions." />
+      <InfoBox Icon={TogetherSvg} text="Continue together," subText="with the next actions." />
       <LoveAffirmations />
       <LetGoCard
         title="Let Go"
-        subtext="Stand with your feet on the floor and imagine the negative energy flowing into mother earth."
+        subtext="Stand with your feet on the floor and imagine the negative energy flowing back to earth."
         label="SPEAK OUT LOUD:"
         quote={'I let the emotion go,\nso love can grow.'}
       />
-      <ReconnectLabels />
+      <ReconnectLabels subText="Choose your way to connect."/>
       <Pressable style={styles.button} onPress={() => router.back()} accessibilityRole="button">
         <AppText variant="heroButtonText" style={styles.buttonText}>
           Finish

@@ -132,7 +132,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 6,
     borderWidth: 1,
-    borderStyle: 'dashed',
     borderColor: colors.forest,
   },
   input: {
