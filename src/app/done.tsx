@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppText } from '@/components/AppText';
 import { DoneCard } from '@/components/DoneCard';
 import { ProcessHeader } from '@/components/ProcessHeader';
+import { ProcessIntro } from '@/components/ProcessIntro';
 import { ProcessNav } from '@/components/ProcessNav';
 import { TalkOptions } from '@/components/TalkOptions';
 import { colors, spacing } from '@/constants/theme';
@@ -15,25 +16,25 @@ export default function DoneScreen() {
 
   return (
     <View style={styles.screen}>
-      <ScrollView contentContainerStyle={styles.content}>
+      <View style={styles.top}>
         <ProcessHeader onClose={goHome} />
         <View style={styles.nav}>
           <ProcessNav step={5} />
         </View>
-        <View style={styles.card}>
-          <DoneCard />
-        </View>
-        <View style={styles.badge}>
-          <AppText variant="labelBig" style={styles.badgeText}>
-            RAIN COMPLETE
-          </AppText>
-        </View>
-        <AppText variant="heroQuestion" style={styles.title}>
-          {'You found your\nway back.'}
-        </AppText>
-        <View style={styles.options}>
-          <TalkOptions onNow={goToContent} onLater={goToContent} />
-        </View>
+      </View>
+      <ScrollView contentContainerStyle={styles.content}>
+        <ProcessIntro step="4 / 4 STEPS" title="Completed" text={'You finished the RAIN steps and\nfound your way back together.'} />
+        <DoneCard />
+        {/*<View style={styles.message}>
+         <View style={styles.badge}>
+            <AppText variant="labelBig" style={styles.badgeText}>
+              RAIN COMPLETE
+            </AppText>
+          </View>
+          <AppText variant="heroQuestion">{'You found your\nway back.'}</AppText>
+        </View>*/}
+        {/*<View style={styles.divider} />*/}
+        <TalkOptions onNow={goToContent} onLater={goToContent} />
         <SafeAreaView edges={['bottom']} />
       </ScrollView>
     </View>
@@ -44,19 +45,23 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
   },
+  top: {
+    paddingHorizontal: spacing.screen, // header and nav stay fixed above the scrolling part
+  },
   content: {
+    gap: 24, // same space between the parts as in NurtureContent (LetGoCard, ReconnectLabels, ...)
     paddingHorizontal: spacing.screen,
     paddingBottom: 16,
   },
   nav: {
     marginTop: 24,
+    paddingBottom: 32, // space to the card belongs to the fixed nav, so the scrolling content starts right below it
   },
-  card: {
-    marginTop: 24,
+  message: {
+    gap: 12,
+    alignItems: 'flex-start',
   },
   badge: {
-    alignSelf: 'flex-start',
-    marginTop: 16,
     paddingHorizontal: 14,
     height: 32,
     justifyContent: 'center',
@@ -68,10 +73,8 @@ const styles = StyleSheet.create({
     lineHeight: 16,
     letterSpacing: 1,
   },
-  title: {
-    marginTop: 12,
-  },
-  options: {
-    marginTop: 28,
+  divider: {
+    height: 1, // as thin as the line in ProcessNav
+    backgroundColor: colors.mint,
   },
 });

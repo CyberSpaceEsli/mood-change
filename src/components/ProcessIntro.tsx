@@ -4,7 +4,7 @@ import { AppText } from '@/components/AppText';
 import { colors } from '@/constants/theme';
 
 type ProcessIntroProps = {
-  step: number;
+  step: number | string; // a number shows "STEP n", a string is shown as it is
   title: string;
   text: string;
 };
@@ -13,7 +13,7 @@ export function ProcessIntro({ step, title, text }: ProcessIntroProps) {
   return (
     <View style={styles.container}>
       <AppText variant="heroIntro">
-        {`STEP ${step}`}
+        {typeof step === 'number' ? `STEP ${step}` : step}
       </AppText>
       <AppText variant="heroQuestion">{title}</AppText>
       <AppText variant="body" style={styles.text}>

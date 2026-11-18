@@ -4,7 +4,7 @@ import { Animated, Easing, Pressable, StyleSheet, View } from 'react-native';
 
 import HomeSvg from '../../assets/icons/home.svg';
 import BackgroundSvg from '../../assets/icons/letgo-background.svg';
-import SproutSvg from '../../assets/icons/letgo-sprout.svg';
+import SproutSvg from '../../assets/icons/sprout-flower.svg';
 import SunSvg from '../../assets/icons/sun-sunny.svg';
 
 import { AppHeader } from '@/components/AppHeader';
