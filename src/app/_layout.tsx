@@ -56,6 +56,12 @@ export default function RootLayout() {
       >
         {/* no swipe-back from the screen edge, the process is left with the close icon only */}
         <Stack.Screen name="process" options={{ gestureEnabled: false }} />
+        {/* the TabBar screens switch without a slide */}
+        <Stack.Screen name="done" options={{ gestureEnabled: false, animation: 'slide_from_right', animationTypeForReplace: 'push' }} />
+        <Stack.Screen name="index" options={{ animation: 'none' }} />
+        <Stack.Screen name="feedback" options={{ animation: 'none' }} />
+        <Stack.Screen name="content" options={{ animation: 'none' }} />
+        <Stack.Screen name="calm" options={{ animation: 'none' }} />
       </Stack>
       <StatusBar style="dark" />
       {showLoading && <LoadingScreen onFinish={() => setShowLoading(false)} />}

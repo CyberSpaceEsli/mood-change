@@ -13,14 +13,14 @@ const steps = [
 ];
 
 type ProcessNavProps = {
-  step: number; // current step, 1 to 4
+  step: number; // current step, 1 to 4 (5 = all steps finished)
 };
 
 export function ProcessNav({ step }: ProcessNavProps) {
   return (
     <View style={styles.row}>
       <View style={styles.line} />
-      <View style={[styles.lineDone, { width: `${((step - 1) / (steps.length - 1)) * 75}%` }]} />
+      <View style={[styles.lineDone, { width: `${(Math.min(step - 1, steps.length - 1) / (steps.length - 1)) * 75}%` }]} />
       {steps.map(({ letter, title }, index) => {
         const isActive = index + 1 === step;
         const isDone = index + 1 < step;

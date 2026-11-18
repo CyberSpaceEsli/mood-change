@@ -19,12 +19,12 @@ export function NurtureContent() {
       <LoveAffirmations />
       <LetGoCard
         title="Let Go"
-        subtext="Stand with your feet on the floor and imagine the negative energy flowing back to earth."
+        subtext="Feel your feet on the ground and let the negative energy flow back into the earth, making room for positive energy to grow."
         label="SPEAK OUT LOUD:"
         quote={'I let the emotion go,\nso love can grow.'}
       />
       <ReconnectLabels subText="Choose your way to connect."/>
-      <Pressable style={styles.button} onPress={() => router.back()} accessibilityRole="button">
+      <Pressable style={styles.button} onPress={() => router.replace('/done')} accessibilityRole="button">
         <AppText variant="heroButtonText" style={styles.buttonText}>
           Finish
         </AppText>

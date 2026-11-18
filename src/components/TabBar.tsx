@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { router, usePathname } from 'expo-router';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import BookmarkSvg from '../../assets/icons/bookmark.svg';
@@ -10,23 +10,23 @@ import { AppText } from '@/components/AppText';
 import { colors, spacing } from '@/constants/theme';
 
 const items = [
-  { label: 'Home', Icon: HomeSvg },
-  { label: 'Feedback', Icon: FeedbackSvg },
-  { label: 'Content', Icon: BookmarkSvg },
-  { label: 'Calm', Icon: WindSvg },
-];
+  { label: 'Home', Icon: HomeSvg, href: '/' },
+  { label: 'Feedback', Icon: FeedbackSvg, href: '/feedback' },
+  { label: 'Content', Icon: BookmarkSvg, href: '/content' },
+  { label: 'Calm', Icon: WindSvg, href: '/calm' },
+] as const;
 
 export function TabBar() {
-  const [active, setActive] = useState('Home');
+  const pathname = usePathname(); // the active item follows the current screen
 
   return (
     <View style={styles.bar}>
-      {items.map(({ label, Icon }) => {
-        const isActive = label === active;
+      {items.map(({ label, Icon, href }) => {
+        const isActive = pathname === href;
         return (
           <Pressable
             key={label}
-            onPress={() => setActive(label)}
+            onPress={() => router.replace(href)}
             style={[styles.item, isActive && styles.itemActive]}
           >
             <Icon

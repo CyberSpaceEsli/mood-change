@@ -7,7 +7,7 @@ import { AppText } from '@/components/AppText';
 import { colors } from '@/constants/theme';
 
 type ProcessHeaderProps = {
-  step: number;
+  step?: number; // without a step the "n / 4" label is hidden
   onClose: () => void;
 };
 
@@ -24,11 +24,13 @@ export function ProcessHeader({ step, onClose }: ProcessHeaderProps) {
         <AppText variant="titleSmall">Mood Change</AppText>
 
         <View style={[styles.side, styles.right]}>
-          <View style={styles.label}>
-            <AppText variant="labelBig" style={styles.labelText}>
-              {step} / 4
-            </AppText>
-          </View>
+          {step !== undefined && (
+            <View style={styles.label}>
+              <AppText variant="labelBig" style={styles.labelText}>
+                {step} / 4
+              </AppText>
+            </View>
+          )}
         </View>
       </View>
     </SafeAreaView>
