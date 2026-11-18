@@ -14,14 +14,17 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
 
+import { LoadingScreen } from '@/components/LoadingScreen';
 import { colors } from '@/constants/theme';
 
 // Keep the splash screen visible until the fonts are ready.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  const [showLoading, setShowLoading] = useState(true);
   const [loaded, error] = useFonts({
     Lora_400Regular,
     Lora_500Medium,
@@ -44,7 +47,7 @@ export default function RootLayout() {
   }
 
   return (
-    <>
+    <View style={styles.root}>
       <Stack
         screenOptions={{
           headerShown: false,
@@ -55,6 +58,13 @@ export default function RootLayout() {
         <Stack.Screen name="process" options={{ gestureEnabled: false }} />
       </Stack>
       <StatusBar style="dark" />
-    </>
+      {showLoading && <LoadingScreen onFinish={() => setShowLoading(false)} />}
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+  },
+});
