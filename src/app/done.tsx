@@ -23,7 +23,7 @@ export default function DoneScreen() {
         </View>
       </View>
       <ScrollView contentContainerStyle={styles.content}>
-        <ProcessIntro step="4 / 4 STEPS" title="Completed" text={'You finished the RAIN steps and\nfound your way back together.'} />
+        <ProcessIntro step="4 / 4 STEPS" title={'You found your\nway back.'} mediumTitle/>
         <DoneCard />
         {/*<View style={styles.message}>
          <View style={styles.badge}>

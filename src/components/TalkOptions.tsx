@@ -25,7 +25,7 @@ export function TalkOptions({ onNow, onLater }: TalkOptionsProps) {
     <View style={styles.container}>
       <View style={styles.intro}>
         <AppText variant="heading">Content</AppText>
-        <AppText variant="body">When do you want to talk about it?</AppText>
+        <AppText variant="body">When do you want to talk about the topic?</AppText>
       </View>
       <View style={styles.row}>
         {options.map(({ title, text, Icon, onPress }) => (
